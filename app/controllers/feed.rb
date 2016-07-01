@@ -1,42 +1,26 @@
 require 'rss'
 require 'open-uri'
 require 'pry-byebug'
+require 'pp'
 
 
 
 get '/' do
 
-  @feeds = Feed.new
+  @feed = Feed.find(1)
   # binding.pry
+  p @feed
   erb :"/index"
 
 end
 
-post '/feed' do
+
+get '/feed' do
+
+  @feed = Feed.find(1)
+  # @feeds.items
+
+  erb :"/index"
 # binding.pry
-p params
-
-  feed = Feed.get_feed(params[:feed][:title])
-  # redirect "/feed/#{feed.id}"
-
-  erb "/feed/show", locals: {feed: feed}
-
-end
-
-
-get '/feed/:title' do |id|
-
-  feed = Feed.find(id)
-
-  erb "/feed/index", locals: {feed: feed}
-
-end
-
-
-get '/feed/:id' do |id|
-
-  feed = Feed.find(id)
-
-  erb "/feed/index", locals: {feed: feed}
 
 end

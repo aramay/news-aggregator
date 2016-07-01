@@ -12,6 +12,7 @@ Dotenv.load
 
 require 'uri'
 require 'pathname'
+require 'httparty'
 
 require 'pg'
 require 'active_record'
