@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="">
+    <h2>Styles of Hops</h2>
+  </div>
+  <div class="">
+  <% @styles.each do |style| %>
+    <div class="">
+      <div class="">
+      <h3> <%= style["name"] %> </h3>
+      <p>description:</p>
+      <p> <%= style["description"] %> </p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
+</div>
