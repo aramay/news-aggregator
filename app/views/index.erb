@@ -93,9 +93,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <%= @feed.items.each do |item| %>
-                            <p>item</p>
+                        <h1>News Feed</h1>
+                        <% @feed.items.each do |item| %>
+                            <h4>Title: </h4>
+                            <p><a href="<%= item.title %>"><h4><%= item.title %> </h4></a>
+                            </p>
+                            <h4>Description: </h4>
+                            <p><%= item.description %></p>
 
                         <% end %>
 
